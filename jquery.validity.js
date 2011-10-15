@@ -56,6 +56,8 @@
 	 */
     $.fn.validity = function (options, callback) {
 
+		if (!this.length) return this;
+
 		$inputs = $('input[type="text"], input[type="email"]');
 		
 		// Set autodefault by setting the onfocus events
