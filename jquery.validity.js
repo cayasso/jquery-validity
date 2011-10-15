@@ -61,25 +61,25 @@
 		$inputs = $('input[type="text"], input[type="email"]');
 		
 		// Set autodefault by setting the onfocus events
-        $inputs.live('focusin', function () {										  
+		$inputs.live('focusin', function () {										  
 			if (this.value == this.defaultValue)
 				this.value = '';  
-        }).live('focusout', function () {
+		}).live('focusout', function () {
 			if (this.value === '')
 				this.value = this.defaultValue || '';
-        });
+		});
 		
 		// Form submit event definition
 		this.submit(function () {
 			
 			// Cache the DOM form in variable
-            var form = this, 
+			var form = this, 
 			
 			// Set initial status
 			status = true;
 
 			// Iterate trough all fields
-            $.each(o.fields, function (key, rls) {
+			$.each(o.fields, function (key, rls) {
 				
 				if ( ! runRules($(form).find(key), rls) === true) {											
 					
